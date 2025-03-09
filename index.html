@@ -84,7 +84,10 @@
     <img src="woka.png" alt="WOOKA" height="25px" />
     <script>
       const domain = document.querySelector('.domain');
-      domain.innerHTML = location.host;
+      const url = new URL(location.href);
+      const source = url.searchParams.get("source");
+
+      domain.textContent = source || "The domain you are looking for";
     </script>
   </body>
 </html>
